@@ -1,0 +1,16 @@
+---
+const { nom, foto, descripcio, Id } = Astro.props.dades;
+//console.log(descripcio)
+---
+
+
+<div class="border mb-8 w-1/2 p-8 bg-white ">
+    <h1 class="text-xl font-bold text-center">{nom}</h1>
+   
+    <img class="rounded-xl w-2/3 m-auto" src={foto} alt="">
+    <hr class="my-4" />
+    {descripcio.replace(/\n/g, '*n*').split('*n*').map(e => <p>{e}</p>)}
+
+    <a href={"/receptes/eliminar/"+Id}>Eliminar</a>
+
+</div>
